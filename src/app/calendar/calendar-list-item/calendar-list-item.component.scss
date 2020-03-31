@@ -1,0 +1,13 @@
+:host {
+  width: 14.28%;
+}
+
+.calendar-list-item {
+  border:1px solid #cccccc;
+  height: 140px;
+  padding:5px;
+}
+
+.calendar-list-item:hover {
+  background-color: #f4f4f4;
+}

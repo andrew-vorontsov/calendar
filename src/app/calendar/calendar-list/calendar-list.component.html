@@ -1,1 +1,12 @@
-<p>calendar-list works!</p>
+<app-date-switcher
+  [month] = 'currentMonth'
+  [year] = 'currentYear'
+  (switchDate) = "switchMonth($event)"
+  (switchHome) = "switchCurrentDate()">
+</app-date-switcher>
+<div class="calendar-list">
+  <app-calendar-list-item
+    *ngFor = "let item of calendarItems"
+    [calendarItem] = 'item'>
+  </app-calendar-list-item>
+</div>

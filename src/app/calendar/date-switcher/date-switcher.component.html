@@ -1,1 +1,6 @@
-<p>date-switcher works!</p>
+<div class="date-switcher">
+  <i class="date-switcher-arrow fa fa-arrow-left" (click) = "switchMonth(-1)"></i>
+  {{ month }} {{ year }}
+  <i class="date-switcher-arrow fa fa-arrow-right" (click) = "switchMonth(1)"></i>
+  <button class="date-switcher-arrow date-switcher-button" (click) = "switchCurrentMonth()">Сегодня</button>
+</div>
