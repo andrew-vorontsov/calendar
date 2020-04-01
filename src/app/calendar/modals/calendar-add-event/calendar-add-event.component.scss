@@ -1,0 +1,60 @@
+.back-mask {
+  background: rgba($color: #000000, $alpha: 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.calendar-add-event {
+  background: #ffffff;
+  padding: 20px;
+  width:250px;
+  margin-top: 80px;
+  position: absolute;
+  left:5%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.top-border-arrow {
+  position:absolute;
+  top: -20px;
+  border: 10px solid transparent;
+  border-bottom:10px solid #ffffff;
+
+}
+
+.cross {
+  position:absolute;
+  right: 8px;
+  top: 5px;
+  color:#000000;
+}
+
+.cross:hover {
+  color:#666666;
+  cursor: pointer;
+}
+
+.calendar-add-event-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0;
+  font-size: 16px;
+  padding: 1px 2px;
+}
+
+.calendar-add-event-button {
+  background-color: #006FCA;
+  color:white;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  margin-right: 10px;
+}
+
+.calendar-add-event-button:hover {
+  cursor: pointer;
+  background: rgb(0, 86, 156);
+}

@@ -1,0 +1,13 @@
+<div class="back-mask" (click) = "closeModal.emit()"></div>
+
+<div class="calendar-add-event">
+  <div class="top-border-arrow"></div>
+  <i class="fa fa-times cross" (click) = "closeModal.emit()"></i>
+  <input
+    type="text"
+    class="calendar-add-event-input"
+    [(ngModel)] = "eventObject"
+    placeholder="5 марта, День рождения"/>
+  <button class="calendar-add-event-button" (click) = "addEvent()">Создать</button>
+</div>
+
