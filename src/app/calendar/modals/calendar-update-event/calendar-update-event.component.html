@@ -12,6 +12,7 @@
       type="text"
       class="calendar-add-event-input"
       formControlName = "event"
+      maxlength="30"
       placeholder="Событие"/>
     <input
       type="text"
@@ -20,6 +21,7 @@
     <input
       type="text"
       class="calendar-add-event-input"
+      maxlength="30"
       formControlName = "persons"
       placeholder="Имена участников"/>
     <textarea
@@ -31,7 +33,7 @@
   </div>
 
   <div class="calendar-add-event-create" *ngIf = "calendarItemInfo.calendarItem.event">
-    <h3>{{ calendarItemInfo.calendarItem.event }}</h3>
+    <h3 class="calendar-add-event-title">{{ calendarItemInfo.calendarItem.event }}</h3>
     <div class="calendar-add-event-date">{{ eventAddDate }}</div>
     <input
       type="text"

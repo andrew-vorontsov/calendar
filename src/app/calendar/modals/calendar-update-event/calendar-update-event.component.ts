@@ -34,7 +34,7 @@ export class CalendarUpdateEventComponent implements OnInit {
   private formCreate() {
     this.form = new FormGroup({
       date: new FormControl('', Validators.required),
-      event: new FormControl('', Validators.required),
+      event: new FormControl('', [Validators.required, Validators.maxLength(30)]),
       persons: new FormControl('', Validators.required),
       description: new FormControl(),
     });
