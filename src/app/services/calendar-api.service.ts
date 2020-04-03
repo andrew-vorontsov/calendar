@@ -4,6 +4,7 @@ import { getDay, addDays, startOfMonth, getMonth, getYear, getDate, getTime, isS
 import { Subject, of } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { DateTransformService } from './date-transform.service';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,26 +12,7 @@ import { DateTransformService } from './date-transform.service';
 export class CalendarApiService {
 
   private calendarState: CalendarItem[] = [];
-  private eventState: CalendarItem[] = [
-    {
-      date: 1585891352111,
-      event: 'Первый день',
-      persons: 'Андрей Воронцов',
-      description: 'Тестовое описание',
-    },
-    {
-      date: 1585721954000,
-      event: 'Второй день',
-      persons: 'Оля день',
-      description: '',
-    },
-    {
-      date: 1585421954000,
-      event: 'Третий день',
-      persons: 'март день',
-      description: '',
-    }
-  ];
+  private eventState: CalendarItem[] = [...this.storageService.getFromLocalStorage()];
 
   private calendarState$: Subject<CalendarItem[]> = new Subject<CalendarItem[]>();
   private searchState$: Subject<CalendarItem[]> = new Subject<CalendarItem[]>();
@@ -94,6 +76,7 @@ export class CalendarApiService {
         return null;
       } else {
         this.eventState.push({date: getTime(eventDate), event: eventMessage, persons: 'Я', description: ''});
+        this.storageService.setToLocalStorage(this.eventState);
         this.updateCalendarState(getTime(eventDate));
       }
   }
@@ -103,9 +86,11 @@ export class CalendarApiService {
     const repeatEvent = this.eventState.findIndex(item => isSameDay(item.date, eventObject.date));
     if (repeatEvent === -1) {
       this.eventState.push(eventObject);
+      this.storageService.setToLocalStorage(this.eventState);
       this.updateCalendarState(getTime(eventObject.date));
     } else {
       this.eventState[repeatEvent] = eventObject;
+      this.storageService.setToLocalStorage(this.eventState);
       this.updateCalendarState(getTime(eventObject.date));
     }
 }
@@ -136,6 +121,7 @@ export class CalendarApiService {
   public deleteFromEventState(date) {
     const deleteEventIndex = this.eventState.findIndex(item => isSameDay(item.date, date));
     this.eventState.splice(deleteEventIndex, 1);
+    this.storageService.setToLocalStorage(this.eventState);
     this.updateCalendarState(date);
   }
 
@@ -143,5 +129,5 @@ export class CalendarApiService {
     this.updateCalendarState(item.date);
   }
 
-  constructor(private dateTransform: DateTransformService) { }
+  constructor(private dateTransform: DateTransformService, private storageService: LocalStorageService) { }
 }
