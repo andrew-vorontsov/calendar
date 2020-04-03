@@ -3,6 +3,9 @@
   height: 70px;
   align-items: center;
   font-size:20px;
+  width:1200px;
+  padding:0 20px;
+  margin:0 auto;
 }
 
 .date-switcher-arrow {
@@ -16,6 +19,18 @@
   margin:0 5px;
 }
 
+.date-switcher-arrow:hover {
+  cursor: pointer;
+  color: #999999;
+}
+
+.date-switcher-month {
+  width:140px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
 .date-switcher-button {
   font-size:13px;
+  cursor: pointer;
 }

@@ -1,1 +1,9 @@
-<div class="calendar-list-item">{{ calendarItem.date | date: 'dd/MM' }}<p>{{ calendarItem.event }}</p></div>
+<div
+  class="calendar-list-item"
+  [ngClass] = "{'calendar-list-item__active' : calendarItem.event}"
+  (click) = "updateEvent.emit($event)">
+    {{ daysOfWeek[indexx] ? daysOfWeek[indexx] : null }}
+    {{ calendarItem.date | date: 'd' }}
+  <div class = "calendar-list-item-events">{{ calendarItem.event }}</div>
+  <div class = "calendar-list-item-persons">{{ calendarItem.persons }}</div>
+</div>

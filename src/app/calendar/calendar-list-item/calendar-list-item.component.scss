@@ -1,13 +1,27 @@
 :host {
-  width: 14.28%;
+  width: 171px;
 }
 
 .calendar-list-item {
   border:1px solid #cccccc;
-  height: 140px;
+  height: 160px;
   padding:5px;
+  overflow: hidden;
+}
+
+.calendar-list-item__active {
+  background-color: #C1E4FF;
 }
 
 .calendar-list-item:hover {
   background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.calendar-list-item__active:hover {
+  background-color: rgb(145, 207, 255);
+}
+
+.calendar-list-item-events {
+  margin: 15px 0;
 }

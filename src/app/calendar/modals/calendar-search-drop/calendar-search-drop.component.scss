@@ -1,0 +1,27 @@
+.calendar-search {
+  background: #ffffff;
+  margin-top: 28px;
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+.eventItem {
+  width:314px;
+  box-sizing: border-box;
+  padding:10px 15px;
+}
+
+.eventItem:hover {
+  background-color: #C1E4FF;
+  cursor: pointer;
+}
+
+.notFined:hover {
+  background-color: #ffffff;
+}
+
+.eventItemDate {
+  color:#666666;
+  font-size: 13px;
+  font-weight: bold;
+}

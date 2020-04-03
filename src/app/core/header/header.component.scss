@@ -1,15 +1,16 @@
 .header-background {
   background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width:90%;
+  width:1200px;
   margin: 0 auto;
   height:70px;
-  padding-bottom: 20px;
+  padding: 0 30px 20px;
 }
 
 .buttons-container-button {
@@ -19,4 +20,9 @@
   border: none;
   padding: 7px 15px;
   margin-right: 10px;
+}
+
+.buttons-container-button:hover {
+  cursor: pointer;
+  background: rgb(0, 86, 156);
 }

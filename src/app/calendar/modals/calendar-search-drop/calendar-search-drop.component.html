@@ -1,0 +1,10 @@
+<div class="calendar-search">
+  <div
+    class="eventItem"
+    *ngFor = "let item of eventList"
+    (click) = "getListItem(item)">
+      {{ item.event }}
+    <div class="eventItemDate">{{ dateFormat(item.date) }}</div>
+  </div>
+  <div class="eventItem notFined" *ngIf = "eventList.length === 0">Не найдено</div>
+</div>

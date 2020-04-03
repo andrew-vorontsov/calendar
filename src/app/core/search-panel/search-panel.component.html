@@ -1,3 +1,11 @@
+<ng-template appModalRef></ng-template>
 <div class="search-panel">
-  <input class="search-panel-input" type="text">
+  <input
+    class="search-panel-input"
+    type="text"
+    placeholder="Событие, дата или участник"
+    (keyup) = "searchRun()"
+    (blur) = "closeModal()"
+    (focus) = "searchRun()"
+    [(ngModel)] = "searchValue">
 </div>

@@ -1,12 +1,18 @@
-<app-date-switcher
-  [month] = 'currentMonth'
-  [year] = 'currentYear'
-  (switchDate) = "switchMonth($event)"
-  (switchHome) = "switchCurrentDate()">
-</app-date-switcher>
-<div class="calendar-list">
-  <app-calendar-list-item
-    *ngFor = "let item of calendarItems"
-    [calendarItem] = 'item'>
-  </app-calendar-list-item>
+<ng-template appModalRef></ng-template>
+<app-header></app-header>
+<div class="calendar-background">
+  <app-date-switcher
+    [month] = 'currentMonth'
+    [year] = 'currentYear'
+    (switchDate) = "switchMonth($event)"
+    (switchHome) = "switchCurrentDate()">
+  </app-date-switcher>
+  <div class="calendar-list">
+    <app-calendar-list-item
+      *ngFor = "let item of calendarItems; let i = index"
+      [calendarItem] = 'item'
+      (updateEvent) = "showModal($event, item)"
+      [indexx] = "i">
+    </app-calendar-list-item>
+  </div>
 </div>

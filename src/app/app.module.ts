@@ -9,7 +9,11 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DateSwitcherComponent } from './calendar/date-switcher/date-switcher.component';
 import { CalendarListComponent } from './calendar/calendar-list/calendar-list.component';
 import { CalendarListItemComponent } from './calendar/calendar-list-item/calendar-list-item.component';
-
+import { CalendarAddEventComponent } from './calendar/modals/calendar-add-event/calendar-add-event.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalRefDirective } from './calendar/modals/modal-ref.directive';
+import { CalendarUpdateEventComponent } from './calendar/modals/calendar-update-event/calendar-update-event.component';
+import { CalendarSearchDropComponent } from './calendar/modals/calendar-search-drop/calendar-search-drop.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +22,25 @@ import { CalendarListItemComponent } from './calendar/calendar-list-item/calenda
     CalendarComponent,
     DateSwitcherComponent,
     CalendarListComponent,
-    CalendarListItemComponent
+    CalendarListItemComponent,
+    CalendarAddEventComponent,
+    ModalRefDirective,
+    CalendarAddEventComponent,
+    CalendarUpdateEventComponent,
+    CalendarSearchDropComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
+  entryComponents: [
+    CalendarAddEventComponent,
+    CalendarUpdateEventComponent,
+    CalendarSearchDropComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

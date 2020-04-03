@@ -1,7 +1,8 @@
+<ng-template appModalRef></ng-template>
 <header class="header-background">
   <div class="header">
     <div class="buttons-container">
-      <button class="buttons-container-button buttons--add">Добавить</button>
+      <button class="buttons-container-button buttons--add" (click)="showModal()">Добавить</button>
       <button class="buttons-container-button buttons--refresh">Обновить</button>
     </div>
     <app-search-panel></app-search-panel>

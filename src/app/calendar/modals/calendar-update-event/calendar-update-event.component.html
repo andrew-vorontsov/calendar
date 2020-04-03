@@ -1,13 +1,54 @@
 <div class="back-mask" (click) = "closeModal.emit()"></div>
 
-<div class="calendar-add-event">
-  <div class="top-border-arrow"></div>
+<form
+  class="calendar-add-event"
+  [ngStyle] = "position"
+  [formGroup] = "form"
+  (ngSubmit) = "addEvent()">
+  <div [ngClass]="{'right-border-arrow' : isweekend(), 'left-border-arrow' : !isweekend()}"></div>
   <i class="fa fa-times cross" (click) = "closeModal.emit()"></i>
-  <input
-    type="text"
-    class="calendar-add-event-input"
-    [(ngModel)] = "eventObject"
-    placeholder="5 марта, День рождения"/>
-  <button class="calendar-add-event-button" (click) = "addEvent()">Создать</button>
-</div>
+  <div class="calendar-add-event-create" *ngIf = "!calendarItemInfo.calendarItem.event">
+    <input
+      type="text"
+      class="calendar-add-event-input"
+      formControlName = "event"
+      placeholder="Событие"/>
+    <input
+      type="text"
+      class="calendar-add-event-input"
+      formControlName = "date"/>
+    <input
+      type="text"
+      class="calendar-add-event-input"
+      formControlName = "persons"
+      placeholder="Имена участников"/>
+    <textarea
+      placeholder="Описание"
+      formControlName = "description"
+      class="calendar-add-event-textarea">
+    </textarea>
+    <button class="calendar-add-event-button" [disabled] = "!this.form.valid">Создать</button>
+  </div>
 
+  <div class="calendar-add-event-create" *ngIf = "calendarItemInfo.calendarItem.event">
+    <h3>{{ calendarItemInfo.calendarItem.event }}</h3>
+    <div class="calendar-add-event-date">{{ eventAddDate }}</div>
+    <input
+      type="text"
+      class="calendar-add-event-input"
+      formControlName = "persons"
+      placeholder="Имена участников"/>
+    <textarea
+      placeholder="Описание"
+      formControlName = "description"
+      class="calendar-add-event-textarea">
+    </textarea>
+    <button class="calendar-add-event-button" [disabled] = "!this.form.valid">Сохранить</button>
+    <button
+      type="button"
+      class="calendar-add-event-button button-delete"
+      (click) = "deleteCalendarEvent.emit(calendarItemInfo.calendarItem.date)">
+        Удалить
+    </button>
+  </div>
+</form>

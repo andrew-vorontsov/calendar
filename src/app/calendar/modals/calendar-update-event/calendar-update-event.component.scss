@@ -13,16 +13,21 @@
   width:250px;
   margin-top: 80px;
   position: absolute;
-  left:5%;
   box-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-.top-border-arrow {
+.right-border-arrow {
   position:absolute;
-  top: -20px;
+  right: -20px;
   border: 10px solid transparent;
-  border-bottom:10px solid #ffffff;
+  border-left:10px solid #ffffff;
+}
 
+.left-border-arrow {
+  position:absolute;
+  left: -20px;
+  border: 10px solid transparent;
+  border-right:10px solid #ffffff;
 }
 
 .cross {
@@ -40,9 +45,22 @@
 .calendar-add-event-input {
   width: 100%;
   box-sizing: border-box;
-  margin: 10px 0;
-  font-size: 16px;
+  margin: 5px 0;
+  font-size: 14px;
+  height:26px;
   padding: 1px 2px;
+}
+
+.calendar-add-event-date {
+  margin-bottom: 15px;
+}
+
+.calendar-add-event-textarea {
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 14px;
+  height: 100px;
+  margin: 30px 0 20px;
 }
 
 .calendar-add-event-button {
@@ -57,4 +75,13 @@
 .calendar-add-event-button:hover {
   cursor: pointer;
   background: rgb(0, 86, 156);
+}
+
+.calendar-add-event-button:disabled {
+  background-color: #666666;
+}
+
+.calendar-add-event-button:disabled:hover {
+  background-color: #666666;
+  cursor: default;
 }
