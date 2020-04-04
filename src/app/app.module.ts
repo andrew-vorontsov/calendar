@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalRefDirective } from './calendar/modals/modal-ref.directive';
 import { CalendarUpdateEventComponent } from './calendar/modals/calendar-update-event/calendar-update-event.component';
 import { CalendarSearchDropComponent } from './calendar/modals/calendar-search-drop/calendar-search-drop.component';
+import { CurrentDayDirective } from './directives/current-day.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { CalendarSearchDropComponent } from './calendar/modals/calendar-search-d
     ModalRefDirective,
     CalendarAddEventComponent,
     CalendarUpdateEventComponent,
-    CalendarSearchDropComponent
+    CalendarSearchDropComponent,
+    CurrentDayDirective
   ],
   imports: [
     BrowserModule,

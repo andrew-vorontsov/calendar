@@ -13,6 +13,12 @@
   background-color: #C1E4FF;
 }
 
+.current-day {
+  background-color:#175f7c;
+  box-shadow: 0 0 15px rgba(37, 86, 160, 0.7);
+  color:white;
+}
+
 .calendar-list-item:hover {
   background-color: #f4f4f4;
   cursor: pointer;
@@ -20,6 +26,10 @@
 
 .calendar-list-item__active:hover {
   background-color: rgb(145, 207, 255);
+}
+
+.current-day:hover {
+  background-color:#175f7c;
 }
 
 .calendar-list-item-events {

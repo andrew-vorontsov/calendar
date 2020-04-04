@@ -1,6 +1,6 @@
 <div
   class="calendar-list-item"
-  [ngClass] = "{'calendar-list-item__active' : calendarItem.event}"
+  [ngClass] = "{'calendar-list-item__active' : calendarItem.event, 'current-day' : currentDay()}"
   (click) = "updateEvent.emit($event)">
     {{ daysOfWeek[indexx] ? daysOfWeek[indexx] : null }}
     {{ calendarItem.date | date: 'd' }}

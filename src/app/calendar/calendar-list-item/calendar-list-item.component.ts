@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { CalendarItem } from 'src/app/interfaces/calendar-item.interface';
+import { isSameDay } from 'date-fns';
 
 @Component({
   selector: 'app-calendar-list-item',
@@ -14,8 +15,9 @@ export class CalendarListItemComponent implements OnInit {
 
   public daysOfWeek: string[] = ['Понедельник,', 'Вторник,', 'Среда,', 'Четверг,', 'Пятница,', 'Суббота,', 'Воскресенье,'];
 
-  public isEvent() {
-    return Boolean(this.calendarItem.event.length);
+  public currentDay() {
+    console.log(this.calendarItem.date);
+    return isSameDay(new Date(), this.calendarItem.date);
   }
 
   constructor() { }
