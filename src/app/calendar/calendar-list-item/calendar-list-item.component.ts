@@ -16,7 +16,6 @@ export class CalendarListItemComponent implements OnInit {
   public daysOfWeek: string[] = ['Понедельник,', 'Вторник,', 'Среда,', 'Четверг,', 'Пятница,', 'Суббота,', 'Воскресенье,'];
 
   public currentDay() {
-    console.log(this.calendarItem.date);
     return isSameDay(new Date(), this.calendarItem.date);
   }
 

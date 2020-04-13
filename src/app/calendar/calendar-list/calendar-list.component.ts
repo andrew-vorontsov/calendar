@@ -4,6 +4,7 @@ import { CalendarItem } from 'src/app/interfaces/calendar-item.interface';
 import { addMonths } from 'date-fns';
 import { ModalRefDirective } from '../modals/modal-ref.directive';
 import { CalendarUpdateEventComponent } from '../modals/calendar-update-event/calendar-update-event.component';
+import { mergeMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-calendar-list',

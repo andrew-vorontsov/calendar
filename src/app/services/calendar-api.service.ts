@@ -51,13 +51,10 @@ export class CalendarApiService {
   }
 
   private mergeStates(calendarState: CalendarItem[], eventState: CalendarItem[]) {
+    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < calendarState.length; i++) {
-      // tslint:disable-next-line:prefer-for-of
-      for (let j = 0; j < eventState.length; j++) {
-        if (isSameDay(calendarState[i].date, eventState[j].date)) {
-          calendarState[i] = eventState[j];
-        }
-      }
+      const value = eventState.find(item => isSameDay(calendarState[i].date, item.date));
+      if (value) { calendarState[i] = value; }
     }
   }
 
